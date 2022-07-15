@@ -1,0 +1,12 @@
+<h3>Información del Calculo del Riesgo</h3>
+<link rel="stylesheet" type="text/css" href="/css/selector.css">
+<form class="mb-4 form_riesgo">
+    {{> Form editar="false"}}
+    <div class="row mt-4">
+        {{> Card valor=probabilidad tipo="Probabilidad"}}
+        {{> Card valor=impacto tipo="Impacto"}}
+        {{> Table}}
+    </div>
+    <a class="btn btn-danger mt-3" href="/" role="button">Regresar</a>
+</form>
+

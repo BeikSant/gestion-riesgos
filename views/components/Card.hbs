@@ -1,0 +1,24 @@
+<div class="col-sm-6">
+    <div class="card">
+        <h5 class="card-header">{{tipo}} General</h5>
+        {{#ifMenor valor 3}}
+        <div class="card-body" style="background-color:#aef896">
+            <p class="card-text ">Resultado = {{valor}}</p>
+            <p class="card-text">Nivel de {{tipo}} = BAJO</p>
+        </div>
+        {{else}}
+        {{#ifMenor valor 6}}
+        <div class="card-body" style="background-color: #f8ee96">
+            <p class="card-text ">Resultado = {{valor}}</p>
+            <p class="card-text">Nivel de {{tipo}} = MEDIO</p>
+        </div>
+        {{else}}
+        <div class="card-body" style="background-color:#f89696">
+            <p class="card-text ">Resultado = {{valor}}</p>
+            <p class="card-text">Nivel de {{tipo}} = ALTO</p>
+        </div>
+        {{/ifMenor}}
+        {{/ifMenor}}
+
+    </div>
+</div>

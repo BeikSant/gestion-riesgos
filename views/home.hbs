@@ -1,0 +1,16 @@
+<a class="btn btn-success" href="/agregar" role="button">Agregar Nuevo Riesgo</a>
+
+<table class="table">
+    <thead>
+        <th scope="col">Nombre</th>
+        <th scope="col">Opcion</th>
+    </thead>
+    <tbody>
+        {{#each riesgos }}
+        <tr>
+            <th scope="row">{{this.nombre}}</th>
+            <td><a href="/ver/{{this._id}}">Ver</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,192 @@
+<div class="form-group">
+    <label for="nombre">Nombre del riesgo</label>
+    <input {{#ifCond editar "true" }} {{else}} readonly {{/ifCond}}type="riesgo" class="form-control" id="nombre"
+        name="nombre" placeholder="Ingrese el nombre del riesgo" value="{{info.nombre}}">
+</div>
+<hr>
+<h5 class="mt-2">Probabilidad</h5>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-header">Factores de Agentes de Amenaza</h5>
+            <div class="card-body">
+                <div class="form-gruop">
+                    <label class="mr-2" for="habilidad">Nivel de habilidad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}name="habilidad" class="form-control form-control-sm" id="habilidad">
+                        <option {{#ifCond info.habilidad "1"}}selected {{/ifCond}}value="1">No requiere habilidades tecnicas (1)</option>
+                        <option {{#ifCond info.habilidad "3"}}selected {{/ifCond}}value="3">Algunas Habilidades Tecnicas (3)</option>
+                        <option {{#ifCond info.habilidad "5"}}selected {{/ifCond}}value="5">Uso Avanzado de Computadoras (5)</option>
+                        <option {{#ifCond info.habilidad "6"}}selected {{/ifCond}}value="6">Habilidades en Redes y Programación (6)</option>
+                        <option {{#ifCond info.habilidad "9"}}selected {{/ifCond}}value="9"> Habilidades en Ciberseguridad (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="motivo">Motivo</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="motivo" name="motivo">
+                        <option {{#ifCond info.motivo "1"}}selected {{/ifCond}}value="1">Recompensa baja o nula (1)</option>
+                        <option {{#ifCond info.motivo "4"}}selected {{/ifCond}}value="4">Posible recompensa (4)</option>
+                        <option {{#ifCond info.motivo "7"}}selected {{/ifCond}}value="7">Ganar Prestigio (7)</option>
+                        <option {{#ifCond info.motivo "8"}}selected {{/ifCond}}value="8">Arruinar La imagen de el Software (8)</option>
+                        <option {{#ifCond info.motivo "9"}}selected {{/ifCond}}value="9">Alta recompensa (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="oportunidad">Oportunidad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="oportunidad" name="oportunidad">
+                        <option {{#ifCond info.oportunidad "0"}}selected {{/ifCond}}value="0">Se requiere acceso completo o recursos caros (0)</option>
+                        <option {{#ifCond info.oportunidad "4"}}selected {{/ifCond}}value="4">Acceso especial o recursos requeridos (4)</option>
+                        <option {{#ifCond info.oportunidad "7"}}selected {{/ifCond}}value="7">Se requiere cierto acceso o recursos (7)</option>
+                        <option {{#ifCond info.oportunidad "9"}}selected {{/ifCond}}value="9">No se requiere acceso ni recursos (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="tamannio">Tamaño</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="tamannio" name="tamannio">
+                        <option {{#ifCond info.tamannio "2"}}selected {{/ifCond}}value="2">Desarrolladores, administradores de sistemas (2)</option>
+                        <option {{#ifCond info.tamannio "4"}}selected {{/ifCond}}value="4">Usuarios de intranet (4)</option>
+                        <option {{#ifCond info.tamannio "5"}}selected {{/ifCond}}value="5">Partners (5)</option>
+                        <option {{#ifCond info.tamannio "6"}}selected {{/ifCond}}value="6">Usuarios autenticados (6)</option>
+                        <option {{#ifCond info.tamannio "9"}}selected {{/ifCond}}value="9">Usuarios de internet anónimos (9)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-header">Factores de Vulnerabilidad</h5>
+            <div class="card-body">
+                <div class="form-gruop">
+                    <label class="mr-2" for="descubrimiento">Facilidad de Descubrimiento</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="descubrimiento" name="descubrimiento">
+                        <option {{#ifCond info.descubrimiento "2"}}selected {{/ifCond}}value="2">Complicado (2)</option>
+                        <option {{#ifCond info.descubrimiento "3"}}selected {{/ifCond}}value="3">Difícil (3)</option>
+                        <option {{#ifCond info.descubrimiento "7"}}selected {{/ifCond}}value="7">Fácil (7)</option>
+                        <option {{#ifCond info.descubrimiento "9"}}selected {{/ifCond}}value="9">Disponible desde herramientas automizadas (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="explotacion">Facilidad de Explotación</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="explotacion" name="explotacion">
+                        <option {{#ifCond info.explotacion "1"}}selected {{/ifCond}}value="1">Teoricamente (1)</option>
+                        <option {{#ifCond info.explotacion "3"}}selected {{/ifCond}}value="3">Difícil (3)</option>
+                        <option {{#ifCond info.explotacion "5"}}selected {{/ifCond}}value="5">Fácil (5)</option>
+                        <option {{#ifCond info.explotacion "9"}}selected {{/ifCond}}value="9">Disponible desde herramientas automizadas (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="conciencia">Conciencia</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="conciencia" name="conciencia">
+                        <option {{#ifCond info.conciencia "1"}}selected {{/ifCond}}value="1">Desconocido (1)</option>
+                        <option {{#ifCond info.conciencia "4"}}selected {{/ifCond}}value="4">Oculto (4)</option>
+                        <option {{#ifCond info.conciencia "6"}}selected {{/ifCond}}value="6">Obvio (6)</option>
+                        <option {{#ifCond info.conciencia "9"}}selected {{/ifCond}}value="9">Conocimiento Público (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="deteccion">Detección de Intrusión</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="deteccion" name="deteccion">
+                        <option {{#ifCond info.deteccion "1"}}selected {{/ifCond}}value="1">Detección activa en aplicación (1)</option>
+                        <option {{#ifCond info.deteccion "3"}}selected {{/ifCond}}value="3">Registrado y revisado (3)</option>
+                        <option {{#ifCond info.deteccion "8"}}selected {{/ifCond}}value="8">Registrado sin revisión (8)</option>
+                        <option {{#ifCond info.deteccion "9"}}selected {{/ifCond}}value="9">No Loegado (9)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h5 class="mt-2">Impacto</h5>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-header">Impacto Técnico</h5>
+            <div class="card-body">
+                <div class="form-gruop">
+                    <label class="mr-2" for="confidencialidad">Pérdida de Confidencialidad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="confidencialidad" name="confidencialidad">
+                        <option {{#ifCond info.confidencialidad "2"}}selected {{/ifCond}}value="2">Datos mínimos no sensibles divulgadoss (2)</option>
+                        <option {{#ifCond info.confidencialidad "4"}}selected {{/ifCond}}value="4">Datos críticos mínimos revelados, datos no sensibles extensos revelados (4)</option>
+                        <option {{#ifCond info.confidencialidad "5"}}selected {{/ifCond}}value="5">Extensos datos críticos revelados (5)</option>
+                        <option {{#ifCond info.confidencialidad "9"}}selected {{/ifCond}}value="9">Todos los datos divulgados (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="integridad">Pérdida de Integridad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="integridad" name="integridad">
+                        <option {{#ifCond info.integridad "3"}}selected {{/ifCond}}value="3">Mínimo datos seriamente corruptos (3)</option>
+                        <option {{#ifCond info.integridad "5"}}selected {{/ifCond}}value="5">Amplios datos ligeramente corruptos (5)</option>
+                        <option {{#ifCond info.integridad "7"}}selected {{/ifCond}}value="7">Amplios datos seriamente corruptos (7)</option>
+                        <option {{#ifCond info.integridad "9"}}selected {{/ifCond}}value="9">Todos los datos totalmente corruptos (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="disponibilidad">Pérdidas de Disponibilidad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="disponibilidad" name="disponibilidad">
+                        <option {{#ifCond info.disponibilidad "0"}}selected {{/ifCond}}value="0">Ninguno (0)</option>
+                        <option {{#ifCond info.disponibilidad "1"}}selected {{/ifCond}}value="1">Servicios secundarios mínimos interrumpidos (1)</option>
+                        <option {{#ifCond info.disponibilidad "5"}}selected {{/ifCond}}value="5">Servicios primarios mínimos interrumpidos, servicios secundarios extensivos
+                            interrumpidos (5)</option>
+                        <option {{#ifCond info.disponibilidad "7"}}selected {{/ifCond}}value="7">Amplios servicios primarios interrumpidos (7)</option>
+                        <option {{#ifCond info.disponibilidad "9"}}selected {{/ifCond}}value="9">Todos los servicios completamente perdidos (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="responsabilidad">Responsabilidad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="responsabilidad" name="responsabilidad">
+                        <option {{#ifCond info.responsabilidad "1"}}selected {{/ifCond}}value="1">totalmente rastreable (1)</option>
+                        <option {{#ifCond info.responsabilidad "7"}}selected {{/ifCond}}value="7">Posiblemente rastreable (7)</option>
+                        <option {{#ifCond info.responsabilidad "9"}}selected {{/ifCond}}value="9">Completamente anónimo (9)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-header">Impacto de Negocio</h5>
+            <div class="card-body">
+                <div class="form-gruop">
+                    <label class="mr-2" for="financiero">Daño Financiero</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="financiero" name="financiero">
+                        <option {{#ifCond info.financiero "1"}}selected {{/ifCond}}value="1">Menos del costo para arreglar la vulnerabilidad (1)</option>
+                        <option {{#ifCond info.financiero "3"}}selected {{/ifCond}}value="3">Efecto menor en la ganancia anual (3)</option>
+                        <option {{#ifCond info.financiero "7"}}selected {{/ifCond}}value="7">Efecto significativo en la ganancia anual (7)</option>
+                        <option {{#ifCond info.financiero "9"}}selected {{/ifCond}}value="9">Bancarrota (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="reputacion">Daño en Reputación</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="reputacion" name="reputacion">
+                        <option {{#ifCond info.reputacion "1"}}selected {{/ifCond}}value="1">Daño Mínimo (1)</option>
+                        <option {{#ifCond info.reputacion "4"}}selected {{/ifCond}}value="4">Pérdida de cuentas importantes (4)</option>
+                        <option {{#ifCond info.reputacion "5"}}selected {{/ifCond}}value="5">Pérdida de buena voluntad (5)</option>
+                        <option {{#ifCond info.reputacion "9"}}selected {{/ifCond}}value="9">Daño de marca (9)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="cumplimiento">No cumplimiento</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="cumplimiento" name="cumplimiento">
+                        <option {{#ifCond info.cumplimiento "2"}}selected {{/ifCond}}value="2">Violación menoro (2)</option>
+                        <option {{#ifCond info.cumplimiento "5"}}selected {{/ifCond}}value="5">Clara violación (5)</option>
+                        <option {{#ifCond info.cumplimiento "7"}}selected {{/ifCond}}value="7">Violación de alto nivel (7)</option>
+                    </select>
+                </div>
+                <div class="form-gruop mt-2">
+                    <label class="mr-2" for="privacidad">Violación de Privacidad</label>
+                    <select {{#ifCond editar "false"}}readonly {{/ifCond}}class="form-control form-control-sm" id="privacidad" name="privacidad">
+                        <option {{#ifCond info.privacidad "3"}}selected {{/ifCond}}value="3">Un individuo (3)</option>
+                        <option {{#ifCond info.privacidad "5"}}selected {{/ifCond}}value="5">Cientos personas (5)</option>
+                        <option {{#ifCond info.privacidad "7"}}selected {{/ifCond}}value="7">Miles Personas (7)</option>
+                        <option {{#ifCond info.privacidad "9"}}selected {{/ifCond}}value="9">Millones (9)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#ifCond editar "true"}}
+<button type="submit" class="btn btn-success mt-3">Calcular</button>
+<a class="btn btn-danger mt-3" href="/" role="button">Cancelar</a>
+{{/ifCond}}
